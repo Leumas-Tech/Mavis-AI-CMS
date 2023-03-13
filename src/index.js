@@ -16,5 +16,22 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap({ strapi }) {
+    // strapi.db.lifecycles.subscribe({
+    //   models: ['plugin::users-permissions.user'],
+    //   async afterCreate(event) {
+    //     // afterCreate lifeclcyle
+    //     const { result, params } = event;
+    //     console.log(result.createdAt);
+    //     console.log(params);
+    //     const authorData = {
+    //         username: result.username,
+    //         users_permissions_user: result.id
+    //     };
+    //     // console.log(new Date().toISOString())
+    //     const data = await strapi.service('api::author.author').create(authorData);
+    //     console.log(data);
+    //   }
+    // });
+  },
 };
