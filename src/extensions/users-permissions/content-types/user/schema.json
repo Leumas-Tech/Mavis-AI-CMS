@@ -68,6 +68,12 @@
       "relation": "manyToMany",
       "target": "api::feature.feature",
       "mappedBy": "PurchasedBy"
+    },
+    "membership": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::membership.membership",
+      "inversedBy": "users"
     }
   }
 }

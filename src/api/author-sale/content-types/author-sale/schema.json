@@ -38,6 +38,13 @@
       "relation": "oneToOne",
       "target": "api::author.author",
       "inversedBy": "author_sale"
+    },
+    "MembershipType": {
+      "type": "enumeration",
+      "enum": [
+        "Free",
+        "Pro"
+      ]
     }
   }
 }
