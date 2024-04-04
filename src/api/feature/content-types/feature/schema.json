@@ -4,7 +4,8 @@
   "info": {
     "singularName": "feature",
     "pluralName": "features",
-    "displayName": "Feature"
+    "displayName": "Feature",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,14 +25,15 @@
       "type": "text"
     },
     "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "author": {
       "type": "relation",
@@ -76,6 +78,16 @@
     },
     "DocumentationLink": {
       "type": "string"
+    },
+    "PythonFiles": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
