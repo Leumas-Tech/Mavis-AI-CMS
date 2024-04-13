@@ -1,0 +1,93 @@
+{
+  "kind": "collectionType",
+  "collectionName": "features",
+  "info": {
+    "singularName": "feature",
+    "pluralName": "features",
+    "displayName": "Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "itemID": {
+      "type": "uid"
+    },
+    "Price": {
+      "type": "float"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "features"
+    },
+    "PurchasedBy": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "features"
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Random",
+        "APIs",
+        "Fun",
+        "Productivity",
+        "Dynamic",
+        "GUIs"
+      ]
+    },
+    "Tags": {
+      "type": "json"
+    },
+    "SEOTitle": {
+      "type": "string"
+    },
+    "SEODescription": {
+      "type": "text"
+    },
+    "Active": {
+      "type": "boolean"
+    },
+    "Version": {
+      "type": "string"
+    },
+    "ReleaseDate": {
+      "type": "datetime"
+    },
+    "DocumentationLink": {
+      "type": "string"
+    },
+    "PythonFiles": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -74,6 +73,9 @@
       "relation": "manyToOne",
       "target": "api::membership.membership",
       "inversedBy": "users"
+    },
+    "Paypal_Information": {
+      "type": "json"
     }
   }
 }
