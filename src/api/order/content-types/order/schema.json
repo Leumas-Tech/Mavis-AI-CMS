@@ -30,6 +30,9 @@
     },
     "paypal": {
       "type": "json"
+    },
+    "Price": {
+      "type": "decimal"
     }
   }
 }
