@@ -88,6 +88,12 @@
       ],
       "type": "media",
       "multiple": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "feature"
     }
   }
 }
