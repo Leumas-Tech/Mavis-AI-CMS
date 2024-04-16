@@ -87,35 +87,35 @@ module.exports = ({env}) => ({
 // https://strapi-plugin-website-builder.netlify.app/quick-start.html
 // npm i strapi-plugin-website-builder
 
-    'website-builder': {
-		enabled: true,
-		config: {
-			builds: [
-				{
-					name: 'manual-build',
-					url: 'https://link-to-hit-on-trigger.com',
-					trigger: {
-						type: 'manual',
-					},
-				},
-			],
-		},
-	},
+  //   'website-builder': {
+	// 	enabled: true,
+	// 	config: {
+	// 		builds: [
+	// 			{
+	// 				name: 'manual-build',
+	// 				url: 'https://link-to-hit-on-trigger.com',
+	// 				trigger: {
+	// 					type: 'manual',
+	// 				},
+	// 			},
+	// 		],
+	// 	},
+	// },
 
-    upload: {
-        config: {
-          provider: "strapi4-ftp-provider",
-          providerOptions: {
-            host: env("FTP_HOST"),
-            port: env("FTP_PORT"),
-            user: env("FTP_USER"),
-            password: env("FTP_PASSWORD"),
-            secure: env.bool("FTP_SECURE", false),
-            path: env("FTP_BASE_PATH"),
-            baseUrl: env("FTP_BASE_URL"),
-          },
-        },
-      },
+  //   upload: {
+  //       config: {
+  //         provider: "strapi4-ftp-provider",
+  //         providerOptions: {
+  //           host: env("FTP_HOST"),
+  //           port: env("FTP_PORT"),
+  //           user: env("FTP_USER"),
+  //           password: env("FTP_PASSWORD"),
+  //           secure: env.bool("FTP_SECURE", false),
+  //           path: env("FTP_BASE_PATH"),
+  //           baseUrl: env("FTP_BASE_URL"),
+  //         },
+  //       },
+  //     },
 
 
 
