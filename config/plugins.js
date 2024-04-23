@@ -57,22 +57,41 @@ module.exports = ({env}) => ({
 
 // Cloudinary
 // https://market.strapi.io/providers/@strapi-provider-upload-cloudinary
+    // upload: {
+    //     config: {
+    //       provider: 'cloudinary',
+    //       providerOptions: {
+    //         cloud_name: env('CLOUDINARY_NAME'),
+    //         api_key: env('CLOUDINARY_KEY'),
+    //         api_secret: env('CLOUDINARY_SECRET'),
+    //       },
+    //       actionOptions: {
+    //         upload: {},
+    //         uploadStream: {},
+    //         delete: {},
+    //       },
+    //     },
+    //   },
     upload: {
-        config: {
-          provider: 'cloudinary',
-          providerOptions: {
-            cloud_name: env('CLOUDINARY_NAME'),
-            api_key: env('CLOUDINARY_KEY'),
-            api_secret: env('CLOUDINARY_SECRET'),
+      config: {
+        provider: 'cloudinary',
+        providerOptions: {
+          cloud_name: env('CLOUDINARY_NAME'),
+          api_key: env('CLOUDINARY_KEY'),
+          api_secret: env('CLOUDINARY_SECRET'),
+        },
+        actionOptions: {
+          upload: {
+            folder: (file) => {
+              // Assuming user information is attached to the file object
+              // e.g., file.related.refId and file.related.user are available
+              return `${file.related.user.username}-${file.related.user.id}`;
+            },
           },
-          actionOptions: {
-            upload: {},
-            uploadStream: {},
-            delete: {},
-          },
+          delete: {},
         },
       },
-
+    },
 
 
       // Image Generator Plugin

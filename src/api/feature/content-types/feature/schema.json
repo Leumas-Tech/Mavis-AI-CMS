@@ -98,6 +98,12 @@
     },
     "Assets": {
       "type": "json"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "feature"
     }
   }
 }
