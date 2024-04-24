@@ -106,6 +106,18 @@
     },
     "README": {
       "type": "text"
+    },
+    "image": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::image.image",
+      "mappedBy": "owner"
+    },
+    "run_file": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::run-file.run-file",
+      "mappedBy": "owner"
     }
   }
 }

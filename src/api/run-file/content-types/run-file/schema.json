@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "run_files",
+  "info": {
+    "singularName": "run-file",
+    "pluralName": "run-files",
+    "displayName": "RunFile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Files": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "run_file"
+    },
+    "Active": {
+      "type": "boolean"
+    }
+  }
+}
