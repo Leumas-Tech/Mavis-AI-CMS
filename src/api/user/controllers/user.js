@@ -1,27 +1,23 @@
-// user.controller.js
-const { getUserFiles , getUserImages  } = require('../services/user.js');
+// api/user/controllers/user.js
 
 module.exports = {
-  getUserFiles: async function(ctx) {
-    const userId = ctx.state.user.id; // Assuming the user ID is stored in the request context
+  getUserFiles: async ctx => {
     try {
-      const userFiles = await getUserFiles(userId);
-      return ctx.send({ data: userFiles });
-    } catch (error) {
-      console.error('Error fetching user files:', error);
-      return ctx.badRequest('Failed to fetch user files. Please try again.');
+      const userId = ctx.state.user.id; // Ensure you're getting the user ID correctly
+      const userFiles = await someServiceToFetchUserFiles(userId); // Implement this service
+      ctx.body = userFiles; // Use ctx.body to return JSON data
+    } catch (err) {
+      ctx.throw(500, 'Failed to fetch user files');
     }
   },
 
-  getUserImages: async function(ctx) {
-    const userId = ctx.state.user.id; // Assuming the user ID is stored in the request context
+  getUserImages: async ctx => {
     try {
-      const userImages = await getUserImages(userId);
-      return ctx.send({ data: userImages });
-    } catch (error) {
-      console.error('Error fetching user images:', error);
-      return ctx.badRequest('Failed to fetch user images. Please try again.');
+      const userId = ctx.state.user.id;
+      const userImages = await someServiceToFetchUserImages(userId); // Implement this service
+      ctx.body = userImages; // Use ctx.body to return JSON data
+    } catch (err) {
+      ctx.throw(500, 'Failed to fetch user images');
     }
   }
-
 };
