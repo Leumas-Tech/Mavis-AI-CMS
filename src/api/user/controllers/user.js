@@ -1,5 +1,5 @@
 // user.controller.js
-const { getUserFiles , getUserImages  } = require('../services/user.services');
+const { getUserFiles , getUserImages  } = require('../services/user.js');
 
 module.exports = {
   getUserFiles: async function(ctx) {
