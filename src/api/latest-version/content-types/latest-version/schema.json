@@ -4,31 +4,18 @@
   "info": {
     "singularName": "latest-version",
     "pluralName": "latest-versions",
-    "displayName": "LatestVersion"
+    "displayName": "LatestVersion",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
-    },
-    "Notes": {
-      "type": "richtext"
-    },
-    "ReleaseDate": {
-      "type": "date"
-    },
-    "DownloadFiles": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "version": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::version.version"
     }
   }
 }
