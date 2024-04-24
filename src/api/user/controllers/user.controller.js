@@ -1,5 +1,5 @@
 // user.controller.js
-const { getUserFiles , getUserImages  } = require('./user.services');
+const { getUserFiles , getUserImages  } = require('../services/user.services');
 
 module.exports = {
   getUserFiles: async function(ctx) {
@@ -23,5 +23,5 @@ module.exports = {
       return ctx.badRequest('Failed to fetch user images. Please try again.');
     }
   }
-  
+
 };
